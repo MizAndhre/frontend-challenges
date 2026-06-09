@@ -1,0 +1,159 @@
+:root {
+	--primario: hsl(75, 94%, 57%);
+
+	--blanco: hsl(0, 0%, 100%);
+	--gris: hsl(0, 0%, 20%);
+	--gris-oscuro: hsl(0, 0%, 12%);
+	--negro: hsl(0, 0%, 8%);
+
+	/* Fuentes */
+	--fuente-principal: "Inter", sans-serif;
+}
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+body {
+	font-family: var(--fuente-principal);
+	font-size: 1.6rem;
+	line-height: 1.6;
+}
+a {
+	text-decoration: none;
+}
+img {
+	max-width: 100%;
+	display: block;
+}
+h1,
+h2,
+h3,
+p {
+	margin: 0;
+}
+
+/* 
+- Mobile: 375px
+- Desktop: 1440px 
+- Weights: 500, 800 
+*/
+
+.contenedor {
+	background-color: var(--negro);
+	color: var(--blanco);
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	background-color: var(--gris-oscuro);
+	padding: 2.4rem;
+	border-radius: 1rem;
+	width: 32.7rem;
+	font-size: 1.4rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+@media (min-width: 768px) {
+	.card {
+		padding: 4rem;
+		width: 38.4rem;
+	}
+}
+
+.card__imagen {
+	border-radius: 50%;
+	width: 8.9rem;
+	height: 8.9rem;
+}
+
+.card__perfil {
+	margin: 2.2rem 0;
+}
+
+.card__nombre {
+	font-size: 2.4rem;
+	font-weight: 700;
+	margin-bottom: 0.2rem;
+}
+
+.card__ubicacion {
+	font-weight: 600;
+	color: var(--primario);
+}
+
+.card__descripcion {
+	margin-top: 2.2rem;
+	font-weight: 400;
+}
+
+.card__enlaces {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.6rem;
+}
+
+.card__enlace {
+	background-color: var(--gris);
+	color: var(--blanco);
+	border-radius: 1rem;
+	font-weight: 600;
+
+	display: block;
+	width: 100%;
+	padding: 1.1rem 0;
+
+	animation: animation 1s ease-in 0s 1 backwards;
+}
+
+.card__enlace:nth-child(1) {
+	animation-delay: 0.1s;
+}
+.card__enlace:nth-child(2) {
+	animation-delay: 0.3s;
+}
+.card__enlace:nth-child(3) {
+	animation-delay: 0.5s;
+}
+.card__enlace:nth-child(4) {
+	animation-delay: 0.7s;
+}
+.card__enlace:nth-child(5) {
+	animation-delay: 0.9s;
+}
+
+@keyframes animation {
+	0% {
+		opacity: 0;
+		display: none;
+		transform: translateY(5rem);
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		display: block;
+		transform: translateY(0);
+	}
+}
+
+.card__enlace:hover {
+	transition: all 300ms ease-in;
+	background-color: var(--primario);
+	color: var(--gris-oscuro);
+}

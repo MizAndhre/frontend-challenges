@@ -1,0 +1,22 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.border-violeta {
+	@include m.border(#a775f1);
+}
+
+.border-blanco {
+	@include m.border(v.$blanco);
+}
+
+.card--violeta {
+	background-color: v.$violeta;
+}
+
+.card--gris {
+	background-color: v.$gris-azul;
+}
+
+.card--azul {
+	background-color: v.$azul;
+}

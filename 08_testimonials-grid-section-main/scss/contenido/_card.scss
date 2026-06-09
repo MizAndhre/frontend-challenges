@@ -1,0 +1,80 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.card {
+	color: v.$blanco;
+	font-weight: 500;
+	min-width: 32.6rem;
+	border-radius: 0.8rem;
+	padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+	box-shadow: 0px 15px 26px -20px rgba(72, 85, 106, 0.5);
+
+	@include m.desktop {
+		min-width: 25.4rem;
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: 1.7rem;
+		margin-bottom: 1.5rem;
+
+		&__img {
+			width: 3rem;
+		}
+
+		&__perfil {
+			&--nombre {
+				color: v.$blanco;
+				font-size: 1.3rem;
+				font-weight: 600;
+			}
+
+			&--subtitulo {
+				font-size: 1.1rem;
+				@include m.subtitulo(v.$blanco);
+			}
+		}
+	}
+
+	&__contenido {
+		&--info {
+			font-size: 2rem;
+			font-weight: 600;
+			margin-bottom: 1.5rem;
+		}
+
+		&--cita {
+			@include m.cita(v.$blanco);
+			line-height: 1.4;
+			padding-right: 1.5rem;
+
+			@include m.desktop {
+				padding-right: 0;
+			}
+		}
+	}
+
+	&.card--blanco {
+		background-color: v.$blanco;
+		color: v.$gris-azul;
+
+		.card__header {
+			&__perfil {
+				&--nombre {
+					color: v.$gris-azul;
+				}
+
+				&--subtitulo {
+					@include m.subtitulo(v.$gris-azul);
+				}
+			}
+		}
+
+		.card__contenido {
+			&--cita {
+				@include m.cita(v.$gris-azul);
+			}
+		}
+	}
+}
